@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="action mt-4">
+    <!--add a new student-->
+    <div class="add-button" routerLink="add">
+      <button class="btn btn-primary">Add</button>
+    </div>
+    <!--search box-->
+    <div class="input-group" >
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control" />
+      </div>
+      <button type="button" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  
+  <!--show success msg-->
+  <div *ngIf="successmsg" class="alert alert-success alert-dismissible" runat="server" visible="false">
+    <strong>{{successmsg}}</strong>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <table class="table table-bordered mt-4">
+    <thead>
+      <th>STUDENT ID</th>
+      <th>NAME</th>
+      <th>ADDRESS</th>
+      <th>PHONE NO</th>
+      <th>EDIT</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let us of readData">
+        <td>{{us.studid}}</td>
+        <td>{{us.fullname}}</td>
+        <td>{{us.address}}</td>
+        <td>{{us.phoneno}}</td>
+        <td><button class="btn btn-sm btn-danger" (click)="deleteID(us.studid)">Delete</button>&nbsp;
+          <a class="btn btn-sm btn-success" [routerLink]="['/add',us.studid]">Update</a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

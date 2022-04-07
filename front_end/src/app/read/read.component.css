@@ -1,0 +1,32 @@
+.container {
+    margin-top: 9px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container .input-group button {
+    text-align: center;
+    width: 75px;
+    height: 37px;
+}
+.container .action{
+    display: flex;
+    flex-direction: row;
+}
+.container .action .add-button{
+    justify-content: flex-start;
+}
+.container .action .add-button button{
+    width: 83px;
+}
+.container .action .input-group{
+    justify-content: flex-end;
+}
+.container .action .input-group .form-outline{
+    margin-right: 9px;
+}
+.container table th{
+    text-align: center;
+}

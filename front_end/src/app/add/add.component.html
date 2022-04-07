@@ -1,0 +1,40 @@
+<!--show error msg-->
+<div *ngIf="errormsg" class="alert alert-warning alert-dismissible" runat="server" visible="false">
+    <strong>{{errormsg}}</strong>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!--show success msg-->
+<div *ngIf="successmsg" class="alert alert-success alert-dismissible" runat="server" visible="false">
+    <strong>{{successmsg}}</strong>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="main-container">
+    
+    <div class="form-container">
+        <form [formGroup]="userForm">
+            <div class="col-lg-4 mt-4">
+                <label>Fullname</label>
+                <input type="text" class="form-control" formControlName="fullname">
+            </div>
+            <div class="col-lg-4 mt-4">
+                <label>Address</label>
+                <textarea formControlName="address" class="form-control" id="" cols="30" rows="4"></textarea>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <label>Phone/Mobile No</label>
+                <input type="tel" class="form-control" formControlName="phoneno">
+            </div>
+            <div class="col-lg-4 mt-4" *ngIf="!getparamId" (click)="userSubmit()">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-lg-4 m-4" *ngIf="getparamId" (click)="updateStudent()">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

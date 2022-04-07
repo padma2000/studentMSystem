@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+.sidebar {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 8px 9px;
+}
+
+.sidebar p {
+    display: flex;
+    padding: 2px 3px;
+}
